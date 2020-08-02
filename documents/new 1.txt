@@ -1,0 +1,2 @@
+1. read supply power ADC
+2. Read status sen

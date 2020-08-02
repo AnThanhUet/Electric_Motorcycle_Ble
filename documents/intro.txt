@@ -1,0 +1,6 @@
+1. read supply power 	ADC
+2. Read status sen   	GPIOTE
+3. Read params battery	??
+4. Read ECU lock		GPIOTE
+5. Read OBD				UART
+6. Read signal alarm	GPIOTE

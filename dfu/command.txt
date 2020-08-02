@@ -1,0 +1,11 @@
+--gen bootloader setting
+nrfutil settings generate --family NRF52 --application $smart_key_ble_hex_path --application-version 1 --bootloader-version 1 --bl-settings-version 1 settings.hex
+
+--merge bootloader, setting, application to bootloader_setting_application.hex
+mergehex -m .\bootloader.hex .\settings.hex .\nrf52_smartkey.hex -o bootloader_setting_application.hex
+
+--gen package .zip for update
+nrfutil pkg generate --hw-version 52 --application-version 2 --application $smart_key_ble_hex_path --sd-req 0x9d --key-file private.key smart_key_ble_update.zip
+
+1. Program softdevice
+2. Program file merge bootloader_setting_application.hex
